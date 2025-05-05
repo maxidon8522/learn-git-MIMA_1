@@ -1,22 +1,26 @@
-# learn-git-MIMA_1
+# Learn Git - MIMA チーム練習用リポジトリ
 
-このリポジトリは、GitとGitHubの使い方を練習するための共同プロジェクトです。  
-Fork → ブランチ作成 → ファイル編集 → プルリクエスト → マージ の流れを学べます。
+このリポジトリは、MIMAチームメンバーがGitとGitHubの基本的な使い方を練習するための共同プロジェクトです。Fork・ブランチ・Pull Request（PR）など、実際の開発フローを体験してみようみたいな。
 
-## 💡 はじめに
+公開URL: https://github.com/maxidon8522/learn-git-MIMA_1.git
 
-このプロジェクトは、以下のような学びを提供します：
+---
 
-- GitHubでのForkとCloneのやり方
-- ブランチ運用とコミットの流れ
-- Pull Requestの作成・レビュー・マージ体験
-- HTMLファイルを用いたチームプロフィールページの作成
+## 目的
 
-## 🛠 開発の流れ
+- GitとGitHubの基本操作を習得する
+- チームでのコラボレーションの流れ（Fork → ブランチ → PR → マージ）を体験する
+- 自分のプロフィールページを作成し、他のメンバーに紹介する
 
-### 1. このリポジトリをForkして自分のアカウントに複製
+---
+
+## 参加手順
+
+### 1. このリポジトリをFork
+
+GitHub上で [Fork ボタン](https://github.com/maxidon8522/learn-git-MIMA_1/fork) をクリックし、自分のアカウントにコピーします。
 
 ### 2. 自分のPCにClone
 ```bash
-git clone https://github.com/あなたのユーザー名/learn-git-community-site.git
-cd learn-git-community-site
+git clone https://github.com/あなたのユーザー名/learn-git-MIMA_1.git
+cd learn-git-MIMA_1
