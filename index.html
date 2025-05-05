@@ -2,21 +2,25 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8" />
-  <title>Welcome to MIMA Git Practice!</title>
+  <title>MIMA Git Practice</title>
   <style>
     body {
       font-family: sans-serif;
       padding: 2em;
-      background: #f0f0f5;
+      background: #cce7ff; /* チームカラー：水色ベース */
+      transition: background 0.3s;
     }
     h1 {
-      color: #333;
+      color: #222;
     }
     ul {
       padding-left: 1em;
     }
     li {
       margin-bottom: 0.5em;
+    }
+    .lang-switch {
+      margin-bottom: 1em;
     }
     footer {
       margin-top: 2em;
@@ -26,29 +30,54 @@
   </style>
 </head>
 <body>
-  <h1>Git練習コミュニティ MIMA へようこそ！</h1>
-  <p>以下は参加メンバーのプロフィールリンクです（profiles/ ディレクトリ内の .txt を自動表示）:</p>
+  <div class="lang-switch">
+    <button onclick="switchLang('ja')">🇯🇵 日本語</button>
+    <button onclick="switchLang('en')">🇬🇧 English</button>
+  </div>
+
+  <h1 id="title">🎉 Git練習コミュニティ MIMA へようこそ！</h1>
+  <p id="desc">以下は参加メンバーのプロフィールリンクです：</p>
+
   <ul id="profile-list">
-    <!-- JavaScriptがここにメンバーを自動追加 -->
+    <!-- JavaScriptで追加 -->
   </ul>
 
-  <footer>
-    <p>このプロジェクトは GitHub を通じた学習を目的としています。</p>
+  <footer id="footer-text">
+    このプロジェクトは GitHub を通じた学習を目的としています。
   </footer>
 
   <script>
-    // 手動で追加するメンバー一覧（profiles フォルダ内のファイル名）
-    const members = ["Maxi", "Taiyo", "honoka"]; // ここに.txtファイル名（拡張子なし）を追加
+    const members = ["Maxi","Taiyo"]; // 新メンバー追加時はここを更新
+    const profileList = document.getElementById("profile-list");
 
-    const ul = document.getElementById("profile-list");
     members.forEach(name => {
       const li = document.createElement("li");
-      const link = document.createElement("a");
-      link.href = `profiles/${name}.txt`;
-      link.textContent = `${name} のプロフィールを見る`;
-      li.appendChild(link);
-      ul.appendChild(li);
+      const a = document.createElement("a");
+      a.href = `profiles/${name}.txt`;
+      a.textContent = `${name} のプロフィールを見る`;
+      li.appendChild(a);
+      profileList.appendChild(li);
     });
+
+    function switchLang(lang) {
+      if (lang === 'en') {
+        document.getElementById("title").textContent = "🎉 Welcome to MIMA Git Practice!";
+        document.getElementById("desc").textContent = "Here are links to each member's profile:";
+        document.getElementById("footer-text").textContent = "This project is for learning GitHub collaboration.";
+        document.querySelectorAll("#profile-list li a").forEach(a => {
+          const name = a.href.split("/").pop().replace(".txt", "");
+          a.textContent = `View ${name}'s profile`;
+        });
+      } else {
+        document.getElementById("title").textContent = "Git練習コミュニティ MIMA へようこそ！";
+        document.getElementById("desc").textContent = "以下は参加メンバーのプロフィールリンクです：";
+        document.getElementById("footer-text").textContent = "このプロジェクトは GitHub を通じた学習を目的としています。";
+        document.querySelectorAll("#profile-list li a").forEach(a => {
+          const name = a.href.split("/").pop().replace(".txt", "");
+          a.textContent = `${name} のプロフィールを見る`;
+        });
+      }
+    }
   </script>
 </body>
 </html>
