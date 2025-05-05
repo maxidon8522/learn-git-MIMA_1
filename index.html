@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <title>Welcome to MIMA Git Practice!</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 2em;
+      background: #f0f0f5;
+    }
+    h1 {
+      color: #333;
+    }
+    ul {
+      padding-left: 1em;
+    }
+    li {
+      margin-bottom: 0.5em;
+    }
+    footer {
+      margin-top: 2em;
+      font-size: 0.9em;
+      color: gray;
+    }
+  </style>
+</head>
+<body>
+  <h1>Git練習コミュニティ MIMA へようこそ！</h1>
+  <p>以下は参加メンバーのプロフィールリンクです（profiles/ ディレクトリ内の .txt を自動表示）:</p>
+  <ul id="profile-list">
+    <!-- JavaScriptがここにメンバーを自動追加 -->
+  </ul>
+
+  <footer>
+    <p>このプロジェクトは GitHub を通じた学習を目的としています。</p>
+  </footer>
+
+  <script>
+    // 手動で追加するメンバー一覧（profiles フォルダ内のファイル名）
+    const members = ["Maxi", "Taiyo", "honoka"]; // ここに.txtファイル名（拡張子なし）を追加
+
+    const ul = document.getElementById("profile-list");
+    members.forEach(name => {
+      const li = document.createElement("li");
+      const link = document.createElement("a");
+      link.href = `profiles/${name}.txt`;
+      link.textContent = `${name} のプロフィールを見る`;
+      li.appendChild(link);
+      ul.appendChild(li);
+    });
+  </script>
+</body>
+</html>
